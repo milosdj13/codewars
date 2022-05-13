@@ -61,3 +61,78 @@ public class TrafficLights {
         }
     }
 }
+
+
+
+
+// 5
+// Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+
+// Examples
+// Input: [1, 5.2, 4, 0, -1]
+// Output: 9.2
+
+// Input: []
+// Output: 0
+
+// Input: [-2.398]
+// Output: -2.398
+public class SumArray {
+
+  public static double sum(double[] numbers) {
+    double sum = 0.0;
+    for(int i=0; i<numbers.length; i++){
+      sum+= numbers[i];
+    }
+    return sum;
+  }
+}
+
+
+
+
+// 6
+// Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+// The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+
+// setAlarm(true, true) -> false
+// setAlarm(false, true) -> false
+// setAlarm(false, false) -> false
+// setAlarm(true, false) -> true
+public class Alarm {
+  
+  public static boolean setAlarm(boolean employed, boolean vacation) {
+    return employed && !vacation ? true : false;
+  }
+}
+
+
+
+// 7
+// You get an array of numbers, return the sum of all of the positives ones.
+// Note: if there is nothing to sum, the sum is default to 0.
+
+// Example [1,-4,7,12] => 1 + 7 + 12 = 20
+import java.util.Arrays;
+public class Positive{
+
+  public static int sum(int[] arr){
+    return Arrays.stream(arr).filter( el -> el>0).sum();
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
