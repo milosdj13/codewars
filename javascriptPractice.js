@@ -353,8 +353,48 @@ function arrayDiff(a, b) {
 
 
 
+// 19
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 
-// JUST CHECKING TOKEN
+// For example (Input --> Output):
+// 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+// 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+// 4 --> 0 (because 4 is already a one-digit number)
+function persistence(num) {
+    let arr = num.toString().split("")
+    let solution = 0;
+    
+    while(arr.length>1){
+      let result = 1;
+      for(let i=0; i<arr.length; i++){
+        result*= arr[i]
+      }
+      arr = result.toString().split("")
+      solution++    
+    } 
+    return solution;
+  }
+
+
+
+
+
+
+// 20
+// The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
+
+// For example:
+// 1.08 --> 30
+// Note! The input is a Real number (actual type is language dependent) and is >= 0. The result should be an Integer.
+function cockroachSpeed(s) {
+    return Math.trunc(s*1000*100/60/60)
+  }
+
+
+
+
+
+
 
 
 

@@ -250,6 +250,60 @@ public class BasicOperations
 
 
 
+// 14
+// Your task is to find the first element of an array that is not consecutive.
+// By not consecutive we mean not exactly 1 larger than the previous element of the array.
+// E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
+// If the whole array is consecutive then return null2.
+// The array will always have at least 2 elements1 and all elements will be numbers. The numbers will also all be unique and in ascending order. The numbers could be positive or negative and the first non-consecutive could be either too!
+class FirstNonConsecutive {
+    static Integer find(final int[] array) {
+      int pre=0;
+      for(int i=0; i<array.length; i++){
+        if(i!=0 && pre+1 != array[i]){
+          return array[i]; 
+        }
+        pre=array[i];
+      }
+      return null;
+    }
+}
+
+
+
+
+
+// 15
+// Task:
+// Given a list of integers, determine whether the sum of its elements is odd or even.
+// Give your answer as a string matching "odd" or "even".
+// If the input array is empty consider it as: [0] (array with a zero).
+
+// Examples:
+// Input: [0]
+// Output: "even"
+
+// Input: [0, 1, 4]
+// Output: "odd"
+
+// Input: [0, -1, -5]
+// Output: "even"
+public class Codewars {
+  public static String oddOrEven (int[] array) {
+    int sum = 0;
+    for(int i=0; i<array.length; i++){
+      sum+= array[i];
+    }
+    return sum%2==1 ? "odd" : "even";
+  }
+}
+
+
+
+
+
+
+
 
 
 
