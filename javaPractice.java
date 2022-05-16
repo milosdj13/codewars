@@ -369,6 +369,51 @@ public class NumberFun {
 
 
 
+// 19
+// Implement a function which convert the given boolean value into its string representation.
+// Note: Only valid inputs will be given.
+public class BooleanToString {
+  public static String convert(boolean b){
+    return b ? "true" : "false";
+  }
+}
+
+
+
+
+// 20
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+// Examples input/output:
+// XO("ooxx") => true
+// XO("xooxx") => false
+// XO("ooxXm") => true
+// XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+// XO("zzoo") => false
+public class XO {
+  
+  public static boolean getXO (String str) {
+    int x = 0;
+    int o = 0;
+    for(int i=0; i<str.length(); i++){
+      if(str.charAt(i) == 'x' || str.charAt(i) == 'X'){
+        x++;
+      }else if(str.charAt(i) == 'o' || str.charAt(i) == 'O'){
+        o++;
+      }
+    }
+    if(x == o){
+      return true;
+    }
+    return false;
+  }
+}
+
+
+
+
+
+
 
 
 

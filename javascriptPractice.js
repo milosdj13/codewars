@@ -440,6 +440,58 @@ function main(verb, noun) {
 
 
 
+// 24
+// Task
+// Write a function that returns both the minimum and maximum number of the given list/array.
+// Remarks
+// All arrays or lists will always have at least one element, so you don't need to check the length. Also, your function will always get an array or a list, you don't have to check for null, undefined or similar.
+
+// Examples
+// minMax([1,2,3,4,5])   == [1,5]
+// minMax([2334454,5])   == [5, 2334454]
+// minMax([1])           == [1, 1]
+function minMax(arr) {
+    let min = arr[0]
+    let max = arr[0]
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i]
+        } else if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+    return [min, max]
+    // 1 row solution === ...arr means it goes in whole array and checks for min/max
+    // return [Math.min([...arr]), Math.max([...arr])];
+}
+
+
+
+
+
+// 25
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+function removeExclamationMarks(s) {
+    return s.split('').filter(el => el != "!").join('')
+}
+
+
+
+
+// 26
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+// Examples:
+
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
+function solution(str, ending) {
+    return str.endsWith(ending) ? true : false
+}
+
+
+
+
 
 
 
