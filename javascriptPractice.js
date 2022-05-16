@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                    // 7kyu
+// 7kyu
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -209,7 +209,7 @@ const makeNegative = num => num > 0 ? -num : num
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                    // 6kyu
+// 6kyu
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -363,17 +363,17 @@ function arrayDiff(a, b) {
 function persistence(num) {
     let arr = num.toString().split("")
     let solution = 0;
-    
-    while(arr.length>1){
-      let result = 1;
-      for(let i=0; i<arr.length; i++){
-        result*= arr[i]
-      }
-      arr = result.toString().split("")
-      solution++    
-    } 
+
+    while (arr.length > 1) {
+        let result = 1;
+        for (let i = 0; i < arr.length; i++) {
+            result *= arr[i]
+        }
+        arr = result.toString().split("")
+        solution++
+    }
     return solution;
-  }
+}
 
 
 
@@ -387,8 +387,56 @@ function persistence(num) {
 // 1.08 --> 30
 // Note! The input is a Real number (actual type is language dependent) and is >= 0. The result should be an Integer.
 function cockroachSpeed(s) {
-    return Math.trunc(s*1000*100/60/60)
-  }
+    return Math.trunc(s * 1000 * 100 / 60 / 60)
+}
+
+
+
+
+
+// 21
+// This time no story, no theory. The examples below show you how to write function accum:
+
+// Examples:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+function accum(s) {
+    return s.split('').map((el, ind) => el.toUpperCase() + el.repeat(ind).toLowerCase() + "-").join('').slice(0, -1)
+}
+
+
+
+
+// 22
+// A Narcissistic Number is a number of length n in which the sum of its digits to the power of n is equal to the original number. If this seems confusing, refer to the example below.
+
+// Ex: 153, where n = 3 (number of digits in 153)
+// 13 + 53 + 33 = 153
+// Write a method is_narcissistic(i) (in Haskell: isNarcissistic :: Integer -> Bool) which returns whether or not i is a Narcissistic Number.
+function isNarcissistic(n) {
+    let sum = 0
+    let arr = n.toString().split('')
+    console.log(arr)
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i] ** arr.length
+    }
+    return sum === n ? true : false
+    // one line solution, must have index in order to get arr.length
+    // return n === n.toString().split('').reduce((res, num, index, arr) => res += Math.pow(num, arr.length), 0)
+}
+
+
+
+
+// 23
+// Grasshopper - Function syntax debugging
+// A student was working on a function and made some syntax mistakes while coding. Help them find their mistakes and fix them.
+function main(verb, noun) {
+    return verb + noun
+}
+
+
 
 
 

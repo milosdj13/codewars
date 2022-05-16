@@ -301,18 +301,70 @@ public class Codewars {
 
 
 
+// 16
+// Complete the solution so that it reverses the string passed into it.
+
+// 'world'  =>  'dlrow'
+// 'word'   =>  'drow'
+public class Kata {
+
+  public static String solution(String str) {
+    String solution = "";
+    
+    for(int i=str.length()-1; i>=0; i--){
+      solution += str.charAt(i);
+    }
+    return solution;
+  }
+}
+
+
+
+// 17
+// Given an array of integers your solution should find the smallest integer.
+// You can assume, for the purpose of this kata, that the supplied array will not be empty.
+
+// For example:
+// Given [34, 15, 88, 2] your solution will return 2
+// Given [34, -345, -1, 100] your solution will return -345
+public class SmallestIntegerFinder {
+    public static int findSmallestInt(int[] args) {
+      int min= args[0];
+      
+      for(int i = 0; i < args.length; i++){
+        if(args[i] < min){
+          min = args[i];
+        }
+      }
+      return min;
+    }
+}
 
 
 
 
 
+// 18
+// You might know some pretty large perfect squares. But what about the NEXT one?
+// Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+// If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
 
-
-
-
-
-
-
+// Examples:(Input --> Output)
+// 121 --> 144
+// 625 --> 676
+// 114 --> -1 since 114 is not a perfect square
+public class NumberFun {
+  public static long findNextSquare(long sq) {
+     long num =  Math.round(Math.sqrt(sq));
+    
+      if(num*num == sq){
+        return (num+1) * (num+1);
+        // return sq+num+num+1; also valid because of Example : 144 + 12+ 12+1 == 169== 13*13
+      }else{
+        return -1;
+      }
+    }
+}
 
 
 
