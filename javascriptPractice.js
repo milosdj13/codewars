@@ -543,19 +543,19 @@ function expandedForm(num) {
 // [0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
 // [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 function findOdd(arr) {
-    let count=0
-    for(let i=0; i< arr.length; i++){
-      for(let j=0; j<arr.length; j++){
-        if(arr[i] == arr[j] ){
-          count++
+    let count = 0
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+                count++
+            }
         }
-      }
-      if(count%2 == 1){
-        return arr[i]
-      }
+        if (count % 2 == 1) {
+            return arr[i]
+        }
     }
     return 0;
-  }
+}
 
 
 
@@ -567,7 +567,7 @@ function findOdd(arr) {
 // Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
 // Write a code that gives out the total amount for different days(d).
 function rentalCarCost(d) {
-    return d>=7 ? d*40-50 : d>=3 ? d*40-20 : d*40
+    return d >= 7 ? d * 40 - 50 : d >= 3 ? d * 40 - 20 : d * 40
 }
 
 
@@ -583,12 +583,63 @@ function rentalCarCost(d) {
 // * [5]                             -> min = 5, max = 5
 // Notes
 // You may consider that there will not be any empty arrays/vectors.
-var min = function(list){
+var min = function (list) {
     return Math.min(...list)
 }
 
-var max = function(list){
-     return Math.max(...list)
+var max = function (list) {
+    return Math.max(...list)
+}
+
+
+
+
+
+// 32
+// The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+// What if the string is empty? Then the result should be empty object literal, {}.
+function count(string) {
+    const count = {}
+
+    string.split('').forEach(el => {
+        count[el] = count[el] ? (count[el] + 1) : 1
+    })
+    return count;
+}
+
+
+
+
+// 33
+// Sentence Smash
+// Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+// Example
+// ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+const smash = words => words.join(" ")
+
+
+
+
+// 34
+// Your task is to construct a building which will be a pile of n cubes. The cube at the bottom will have a volume of n^3, the cube above will have volume of (n-1)^3 and so on until the top which will have a volume of 1^3.
+// You are given the total volume m of the building. Being given m can you find the number n of cubes you will have to build?
+// The parameter of the function findNb (find_nb, find-nb, findNb, ...) will be an integer m and you have to return the integer n such as n^3 + (n-1)^3 + ... + 1^3 = m if such a n exists or -1 if there is no such n.
+
+// Examples:
+// findNb(1071225) --> 45
+// findNb(91716553919377) --> -1
+function findNb(m) {
+    let sum = 0;
+    let count = 1;
+    while (m > sum) {
+        sum = sum + Math.pow(count, 3)
+        count++
+    }
+    if (sum == m) {
+        return count - 1
+    }
+    return -1
 }
 
 
@@ -598,11 +649,112 @@ var max = function(list){
 
 
 
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                    // 5kyu
+// 5kyu
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// 35
+// All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
+// Write a function feast that takes the animal's name and dish as arguments and returns true or false to indicate whether the beast is allowed to bring the dish to the feast.
+// Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
+function feast(beast, dish) {
+    if (beast.charAt(0) === dish.charAt(0) && beast.charAt(beast.length - 1) === dish.charAt(dish.length - 1)) {
+        return true
+    }
+    return false
+}
+
+
+
+// 36
+// Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+// Use conditionals to return the proper message:
+// name equals owner	'Hello boss'
+// otherwise	'Hello guest'
+function greet(name, owner) {
+    return 'Hello '.concat(name === owner ? 'boss' : 'guest')
+}
+
+
+
+// 37
+// Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+// Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+// Examples:
+
+// Testing: [0, 0, 0, 1] ==> 1
+// Testing: [0, 0, 1, 0] ==> 2
+// Testing: [0, 1, 0, 1] ==> 5
+// Testing: [1, 0, 0, 1] ==> 9
+// Testing: [0, 0, 1, 0] ==> 2
+// Testing: [0, 1, 1, 0] ==> 6
+// Testing: [1, 1, 1, 1] ==> 15
+// Testing: [1, 0, 1, 1] ==> 11
+// However, the arrays can have varying lengths, not just limited to 4.
+const binaryArrayToNumber = arr => {
+    return arr.reverse().map((el, index) => el * 2 ** index).reduce((sum, cur) => sum + cur, 0)
+};
+
+
+
+
+// 38
+// Bob needs a fast way to calculate the volume of a cuboid with three values: the length, width and height of the cuboid.Write a function to help Bob with this calculation.class Kata {
+class Kata {
+    static getVolumeOfCuboid(length, width, height) {
+        return length * width * height
+    }
+}
+
+
+
+
+// 39
+// You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+// If it is a square, return its area. If it is a rectangle, return its perimeter.
+
+// area_or_perimeter(6, 10) --> 32
+// area_or_perimeter(3, 3) --> 9
+// Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
+const areaOrPerimeter = function (l, w) {
+    return l === w ? l * w : (l + w) * 2
+};
+
+
+
+
+// 40
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+// Examples:
+// Input: 42145 Output: 54421
+// Input: 145263 Output: 654321
+// Input: 123456789 Output: 987654321
+function descendingOrder(n) {
+    return Number(n.toString().split('').sort().reverse().join(''))
+}
+
+
+
+// 41
+// A square of squares
+// You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
+// However, sometimes, you can't arrange them into a square. Instead, you end up with an ordinary rectangle! Those blasted things! If you just had a way to know, whether you're currently working in vain… Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+// Task
+// Given an integral number, determine if it's a square number:
+// In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+// The tests will always use some integral number, so don't worry about that in dynamic typed languages.
+var isSquare = function (n) {
+    return n == parseInt(Math.sqrt(n)) ** 2 ? true : false
+}
+
+
 
 
 
