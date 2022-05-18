@@ -532,6 +532,69 @@ function expandedForm(num) {
 
 
 
+// 29
+// Given an array of integers, find the one that appears an odd number of times.
+// There will always be only one integer that appears an odd number of times.
+
+// Examples
+// [7] should return 7, because it occurs 1 time (which is odd).
+// [0] should return 0, because it occurs 1 time (which is odd).
+// [1,1,2] should return 2, because it occurs 1 time (which is odd).
+// [0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
+// [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
+function findOdd(arr) {
+    let count=0
+    for(let i=0; i< arr.length; i++){
+      for(let j=0; j<arr.length; j++){
+        if(arr[i] == arr[j] ){
+          count++
+        }
+      }
+      if(count%2 == 1){
+        return arr[i]
+      }
+    }
+    return 0;
+  }
+
+
+
+
+
+// 30
+// After a hard quarter in the office you decide to get some rest on a vacation. So you will book a flight for you and your girlfriend and try to leave all the mess behind you.
+// You will need a rental car in order for you to get around in your vacation. The manager of the car rental makes you some good offers.
+// Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+// Write a code that gives out the total amount for different days(d).
+function rentalCarCost(d) {
+    return d>=7 ? d*40-50 : d>=3 ? d*40-20 : d*40
+}
+
+
+
+
+// 31
+// Your task is to make two functions (max and min, or maximum and minimum, etc., depending on the language) that receive a list of integers as input and return, respectively, the largest and lowest number in that list.
+
+// Examples (Input -> Output)
+// * [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
+// * [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
+// * [42, 54, 65, 87, 0]             -> min = 0, max = 87
+// * [5]                             -> min = 5, max = 5
+// Notes
+// You may consider that there will not be any empty arrays/vectors.
+var min = function(list){
+    return Math.min(...list)
+}
+
+var max = function(list){
+     return Math.max(...list)
+}
+
+
+
+
+
 
 
 
