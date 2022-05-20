@@ -465,6 +465,43 @@ public class Solution {
 
 
 
+// 23
+// You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+// Array can contain numbers or strings. X can be either.
+// Return true if the array contains the value, false if not.
+public class Solution {
+
+    public static boolean check(Object[] a, Object x) {
+        for(int i=0; i<a.length; i++){
+          if(x == a[i]){
+            return true;
+          }
+        }
+      return false;
+    }
+
+}
 
 
 
+
+// 24
+// Who remembers back to their time in the schoolyard, when girls would take a flower and tear its petals, saying each of the following phrases each time a petal was torn:
+// I love you
+// a little
+// a lot
+// passionately
+// madly
+// not at all
+// When the last petal was torn there were cries of excitement, dreams, surging thoughts and emotions.
+// Your goal in this kata is to determine which phrase the girls would say for a flower of a given number of petals, where nb_petals > 0.
+public class Sid {
+    public static String howMuchILoveYou(int nb_petals) {  
+      return nb_petals % 6 == 1 ? "I love you" :
+            nb_petals % 6 == 2 ? "a little" : 
+            nb_petals % 6 == 3 ? "a lot" :    
+            nb_petals % 6 == 4 ? "passionately" :
+            nb_petals % 6 == 5 ? "madly" :
+            nb_petals % 6 == 0 ? "not at all": "";
+    }
+}

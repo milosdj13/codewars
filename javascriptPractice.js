@@ -802,16 +802,47 @@ function highAndLow(numbers) {
 // Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :)
 // If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
 // If he doesn't get 10 hoops, return the string "Keep at it until you get it".
-function hoopCount (n) {
-    return n>=10 ? "Great, now move on to tricks" : "Keep at it until you get it"
- }
+function hoopCount(n) {
+    return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it"
+}
 
 
 // 45
 // Implement a function which multiplies two numbers.
-function multiply(a, b){
-    return a*b
+function multiply(a, b) {
+    return a * b
 }
+
+
+
+
+
+// 46
+// A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+// Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+function isPangram(string) {
+    let regex = /([a-z])(?!.*\1)/g;
+    return (string.match(regex)).length === 26
+}
+
+
+
+
+
+// 47
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+// If the function is passed a valid PIN string, return true, else return false.
+
+// Examples (Input --> Output)
+// "1234"   -->  true
+// "12345"  -->  false
+// "a234"   -->  false
+function validatePIN(pin) {
+    return pin.split("").filter(el => !isNaN(el) && el != "\n").length === pin.length && (pin.length == 4 || pin.length == 6)
+}
+
+
+
 
 
 
