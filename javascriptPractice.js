@@ -779,9 +779,39 @@ function openOrSenior(data) {
 
 
 
+// 43
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+// Examples
+// highAndLow("1 2 3 4 5");  // return "5 1"
+// highAndLow("1 2 -3 4 5"); // return "5 -3"
+// highAndLow("1 9 3 4 -5"); // return "9 -5"
+// Notes
+// All numbers are valid Int32, no need to validate them.
+// There will always be at least one number in the input string.
+// Output string must be two numbers separated by a single space, and highest number is first.
+function highAndLow(numbers) {
+    numbers = numbers.split(" ").sort((a, b) => a - b)
+    return `${numbers[numbers.length - 1]} ${numbers[0]}`
+}
 
 
 
+// 44
+// Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
+// Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :)
+// If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
+// If he doesn't get 10 hoops, return the string "Keep at it until you get it".
+function hoopCount (n) {
+    return n>=10 ? "Great, now move on to tricks" : "Keep at it until you get it"
+ }
+
+
+// 45
+// Implement a function which multiplies two numbers.
+function multiply(a, b){
+    return a*b
+}
 
 
 
