@@ -163,20 +163,63 @@ def other_angle(a, b):
 
 
 
+# 12
+# Trolls are attacking your comment section!
+# A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+# Your task is to write a function that takes a string and return a new string with all vowels removed.
+
+# For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+# Note: for this kata y isn't considered a vowel.
+def disemvowel(string):
+    string = string.replace('a', '')
+    string = string.replace('e', '')
+    string = string.replace('i', '')
+    string = string.replace('o', '')
+    string = string.replace('u', '')
+    string = string.replace('A', '')
+    string = string.replace('E', '')
+    string = string.replace('I', '')
+    string = string.replace('O', '')
+    string = string.replace('U', '')
+    return string
+    
+
+
+
+# 13
+# Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+# (In this case, all triangles must have surface greater than 0 to be accepted).
+def is_triangle(a, b, c):
+    if a+b>c and b+c>a and c+a>b:
+        return True
+    return False
 
 
 
 
+# 14
+# Can you find the needle in the haystack?
+# Write a function findNeedle() that takes an array full of junk but containing one "needle"
+# After your function finds the needle it should return a message (as a string) that says:
+# "found the needle at position " plus the index it found the needle, so:
+
+# find_needle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'])
+# should return "found the needle at position 5" (in COBOL "found the needle at position 6")
+def find_needle(haystack):
+    for index, x in enumerate(haystack):
+        if(x == 'needle'):
+            return f"found the needle at position {index}"
 
 
 
 
+# 15
+# Write a function called repeatStr which repeats the given string string exactly n times.
 
-
-
-
-
-
+# repeatStr(6, "I") // "IIIIII"
+# repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
+def repeat_str(repeat, string):
+    return string*repeat
 
 
 
