@@ -863,10 +863,7 @@ function findShort(s) {
 // invert([]) == []
 // You can assume that all values are integers. Do not mutate the input array/list.
 function invert(array) {
-    return array.map(el => {
-        if (el >= 0) return Number(`-${el}`)
-        return Number(el - el - el)
-    })
+    return array.map(el => -el)
 }
 
 
@@ -885,9 +882,52 @@ function hero(bullets, dragons) {
 
 
 
+// 51
+// Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+// For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+const quarterOf = (month) => {
+    if (month < 4) return 1
+    if (month < 7) return 2
+    if (month < 10) return 3
+    return 4
+
+}
 
 
 
+
+
+// 52
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+// Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+function likes(names) {
+    if (names.length == 0) return "no one likes this"
+    if (names.length == 1) return `${names[0]} likes this`
+    if (names.length == 2) return `${names[0]} and ${names[1]} like this`
+    if (names.length == 3) return `${names[0]}, ${names[1]} and ${names[2]} like this`
+    return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
+}
+
+
+
+
+
+
+// 53
+// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+
+// Example:
+// ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+// None of the arrays will be empty, so you don't have to worry about that!
+function removeEveryOther(arr) {
+    return arr.filter((el, index) => index % 2 == 0)
+}
 
 
 

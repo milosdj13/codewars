@@ -267,11 +267,41 @@ def round_to_next5(n):
 
 
 
+# 18
+# Character recognition software is widely used to digitise printed texts. Thus the texts can be edited, searched and stored on a computer.
+# When documents (especially pretty old ones written with a typewriter), are digitised character recognition softwares often make mistakes.
+# Your task is correct the errors in the digitised text. You only have to handle the following mistakes:
+
+# S is misinterpreted as 5
+# O is misinterpreted as 0
+# I is misinterpreted as 1
+# The test cases contain numbers only by mistake.
+def correct(s):
+    solution = ""
+    for i in s:
+        if i == '0':
+            i = 'O'
+        if i == '1':
+            i = 'I'
+        if i == '5':
+            i = 'S'
+        solution = solution + i
+    
+    return solution
 
 
 
 
 
+
+# 19
+# Write a function which calculates the average of the numbers in a given list.
+# Note: Empty arrays should return 0.
+def find_average(numbers):
+    sum = 0
+    for i in numbers:
+        sum = sum+i
+    return sum/len(numbers)
 
 
 
