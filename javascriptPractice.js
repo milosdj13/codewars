@@ -845,6 +845,40 @@ function validatePIN(pin) {
 
 
 
+// 48
+// Simple, given a string of words, return the length of the shortest word(s).
+// String will never be empty and you do not need to account for different data types.
+function findShort(s) {
+    return s.split(' ').map(el => el.length).sort((a, b) => a - b)[0]
+}
 
 
+
+
+// 49
+// Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+// invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+// invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+// invert([]) == []
+// You can assume that all values are integers. Do not mutate the input array/list.
+function invert(array) {
+    return array.map(el => {
+        if (el >= 0) return Number(`-${el}`)
+        return Number(el - el - el)
+    })
+}
+
+
+
+
+
+// 50
+// A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+
+// Return True if yes, False otherwise :)
+function hero(bullets, dragons){
+    return bullets>=dragons*2
+  }
+  
 
