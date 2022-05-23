@@ -308,6 +308,45 @@ def find_average(numbers):
 
 
 
+# 20
+# Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.
+
+# For example:
+# solution([1,2,3,10,5]) # should return [1,2,3,5,10]
+# solution(None) # should return []
+def solution(nums):
+    try:
+        return sorted(nums)
+    except:
+        return []
+
+
+
+
+
+
+# 21
+# Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+# Write a function which takes a list of strings and returns each line prepended by the correct number.
+# The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+
+# Examples:
+# number([]) # => []
+# number(["a", "b", "c"]) # => ["1: a", "2: b", "3: c"]
+def number(lines):
+    solution = [f"{index+1}: {x}" for index, x in enumerate(lines)]
+    return solution
+
+
+
+
+
+
+
+
+
+
+
 
 
 

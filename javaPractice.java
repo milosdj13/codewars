@@ -538,11 +538,38 @@ class MaxDiffLength {
 
 
 
+// 26
+// We need a simple function that determines if a plural is needed or not. It should take a number, and return true if a plural should be used with that number or false if not. This would be useful when printing out a string such as 5 minutes, 14 apples, or 1 sun.
+// You only need to worry about english grammar rules for this kata, where anything that isn't singular (one of something), it is plural (not one of something).
+// All values will be positive integers or floats, or zero.
+public class Plural{
+  public static boolean isPlural(float f){
+    return f!=1;
+  }
+}
 
 
 
 
 
+// 27
+// Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+
+// For example:
+// a = 1
+// b = 4
+// --> [1, 2, 3, 4]
+public class Kata {
+
+  public static int[] between(int a, int b) {
+    int[] solution = new int[b-a+1];
+
+      for(int i=a; i<=b; i++){
+        solution[i-a] = i;
+      }
+      return solution;
+  }
+}
 
 
 
