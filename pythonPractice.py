@@ -342,10 +342,67 @@ def number(lines):
 
 
 
+# 22
+# You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+# #Examples:
+# Kata.getMiddle("test") should return "es"
+# Kata.getMiddle("testing") should return "t"
+# Kata.getMiddle("middle") should return "dd"
+# Kata.getMiddle("A") should return "A"
+# #Input
+# A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
+# #Output
+# The middle character(s) of the word represented as a string.
+def get_middle(s):
+    solution = ""
+    l = len(s)
+    for index, x in enumerate(s):
+        if l %2 == 0:
+            if index == l/2-1 or index == l/2:
+                solution = solution + x
+        else:
+            if index ==  (l-1)/2:
+                solution = solution + x
+        
+    return solution
 
 
 
 
+# 23
+# Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+
+# Examples (Input -> Output):
+# * "String"      -> "SSttrriinngg"
+# * "Hello World" -> "HHeelllloo  WWoorrlldd"
+# * "1234!_ "     -> "11223344!!__  "
+# Good Luck!
+def double_char(s):
+    sol = ""
+    for i in s:
+        sol = sol + i*2
+    
+    return sol
+
+
+
+
+
+# 24
+# Your task is to write function findSum.
+# Upto and including n, this function will return the sum of all multiples of 3 and 5.
+
+# For example:
+# findSum(5) should return 8 (3 + 5)
+# findSum(10) should return 33 (3 + 5 + 6 + 9 + 10)
+def find(n):
+    sum = 0
+    for i in range(1, n+1):
+        if i % 3 == 0 or i % 5 == 0:
+            sum = sum + i
+        
+    return sum
 
 
 

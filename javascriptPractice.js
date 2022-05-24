@@ -967,5 +967,54 @@ function nbYear(p0, percent, aug, p) {
 
 
 
+// 55
+// Build a pyramid-shaped tower given a positive integer number of floors. A tower block is represented with "*" character.
+
+// For example, a tower with 3 floors looks like this:
+
+// [
+//   "  *  ",
+//   " *** ", 
+//   "*****"
+// ]
+// And a tower with 6 floors looks like this:
+
+// [
+//   "     *     ", 
+//   "    ***    ", 
+//   "   *****   ", 
+//   "  *******  ", 
+//   " ********* ", 
+//   "***********"
+// ]
+function towerBuilder(nFloors) {
+    let arr = new Array(nFloors)
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = " ".repeat((nFloors * 2 - (1 + i * 2)) / 2) + "*".repeat(1 + i * 2) + " ".repeat((nFloors * 2 - (1 + i * 2)) / 2)
+    }
+    return arr
+}
+
+
+
+
+// 56
+// You will be given a vector of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+
+// The returned value must be a string, and have "***" between each of its letters.
+
+// You should not remove or add elements from/to the array.
+function twoSort(s) {
+    return s.sort().shift().split('').join('***')
+}
+
+
+
+
+
+
+
+
 
 
