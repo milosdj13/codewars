@@ -407,4 +407,51 @@ def find(n):
 
 
 
+# 25
+# An anagram is the result of rearranging the letters of a word to produce a new word (see wikipedia).
+# Note: anagrams are case insensitive
+# Complete the function to return true if the two arguments given are anagrams of each other; return false otherwise.
+
+# Examples
+# "foefet" is an anagram of "toffee"
+# "Buckethead" is an anagram of "DeathCubeK"
+def is_anagram(test, original):
+    if sorted(test.lower()) == sorted(original.lower()):
+        return True
+    return False
+
+
+
+
+# 26
+# There was a test in your class and you passed it. Congratulations!
+# But you're an ambitious person. You want to know if you're better than the average student in your class.
+# You receive an array with your peers' test scores. Now calculate the average and compare your score!
+# Return True if you're better, else False!
+# Note:
+# Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+def better_than_average(class_points, your_points):
+    sum = your_points
+    for i in class_points:
+        sum = sum + i
+    
+    return sum/(len(class_points)+1) <= your_points
+
+
+
+
+# 27
+# It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+def remove_char(s):
+    return s[1:len(s)-1]
+
+
+
+
+
+
+
+
+
+
 

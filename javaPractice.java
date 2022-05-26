@@ -574,3 +574,61 @@ public class Kata {
 
 
 
+// 28
+// Task Overview
+// Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
+
+// to_binary(1)  /* should return 1 */
+// to_binary(5)  /* should return 101 */
+// to_binary(11) /* should return 1011 */
+public class Kata {
+  public static int toBinary(int n) {
+    String solution = Integer.toBinaryString(n);
+    return Integer.parseInt(solution);
+  }
+}
+
+
+
+
+
+
+// 29
+// Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
+// Warn the sheep in front of the wolf that it is about to be eaten. Remember that you are standing at the front of the queue which is at the end of the array:
+// [sheep, sheep, sheep, sheep, sheep, wolf, sheep, sheep]      (YOU ARE HERE AT THE FRONT OF THE QUEUE)
+//    7      6      5      4      3            2      1
+// If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep". Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!" where N is the sheep's position in the queue.
+// Note: there will always be exactly one wolf in the array.
+
+// Examples
+// Input: ["sheep", "sheep", "sheep", "wolf", "sheep"]
+// Output: "Oi! Sheep number 1! You are about to be eaten by a wolf!"
+// Input: ["sheep", "sheep", "wolf"]
+// Output: "Pls go away and stop eating my sheep"
+public class ZywOo {
+
+  public static String warnTheSheep(String[] array) {
+    if(array[array.length-1] == "wolf"){
+      return "Pls go away and stop eating my sheep";
+    }
+    for(int i = 0; i<array.length; i++){
+      if(array[i] == "wolf"){
+        int index = array.length-i-1;
+        return "Oi! Sheep number "+index+"! You are about to be eaten by a wolf!";
+      }
+    }
+    return "";
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
