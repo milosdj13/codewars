@@ -1019,7 +1019,7 @@ function twoSort(s) {
 // Numbers may be positive or negative, integers or floats.
 // Floats with decimal part non equal to zero are considered UNeven for this kata.
 function testEven(n) {
-    return n%2==0
+    return n % 2 == 0
 }
 
 
@@ -1037,6 +1037,72 @@ function testEven(n) {
 function solution(string) {
     return string.replace(/([A-Z])/g, ' $1');
 }
+
+
+
+
+
+
+// 59
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+// Example: (Input --> Output)
+// "Dermatoglyphics" --> true
+// "aba" --> false
+// "moOse" --> false (ignore letter case)
+function isIsogram(str) {
+    let arr = str.toLowerCase().split('')
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+
+
+
+//60 
+// Messi's Goal Total
+// Use variables to find the sum of the goals Messi scored in 3 competitions
+// Information
+// Messi goal scoring statistics:
+// Competition	Goals
+// La Liga	43
+// Champions League	10
+// Copa del Rey	5
+
+// Task
+// Create these three variables and store the appropriate values using the table above:
+// laLigaGoals
+// championsLeagueGoals
+// copaDelReyGoals
+// Create a fourth variable named totalGoals that stores the sum of all of Messi's goals for this year.
+var laLigaGoals = 43
+var championsLeagueGoals = 10
+var copaDelReyGoals = 5
+
+var totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals
+
+
+
+
+// 61
+function removeUrlAnchor(url) {
+    return url.split('#')[0]
+}
+
+
+
+
+
+
+
+
+
 
 
 
