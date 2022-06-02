@@ -1091,9 +1091,250 @@ var totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals
 
 
 // 61
+// Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+// Examples
+// "www.codewars.com#about" --> "www.codewars.com"
+// "www.codewars.com?page=1" -->"www.codewars.com?page=1"
 function removeUrlAnchor(url) {
     return url.split('#')[0]
 }
+
+
+
+
+
+// 62
+// Your start-up's BA has told marketing that your website has a large audience in Scandinavia and surrounding countries. Marketing thinks it would be great to welcome visitors to the site in their own language. Luckily you already use an API that detects the user's location, so this is an easy win.
+// The Task
+// Think of a way to store the languages as a database (eg an object). The languages are listed below so you can copy and paste!
+// Write a 'welcome' function that takes a parameter 'language' (always a string), and returns a greeting - if you have it in your database. It should default to English if the language is not in the database, or in the event of an invalid input.
+
+// The Database
+// english: 'Welcome',
+// czech: 'Vitejte',
+// danish: 'Velkomst',
+// dutch: 'Welkom',
+// estonian: 'Tere tulemast',
+// finnish: 'Tervetuloa',
+// flemish: 'Welgekomen',
+// french: 'Bienvenue',
+// german: 'Willkommen',
+// irish: 'Failte',
+// italian: 'Benvenuto',
+// latvian: 'Gaidits',
+// lithuanian: 'Laukiamas',
+// polish: 'Witamy',
+// spanish: 'Bienvenido',
+// swedish: 'Valkommen',
+// welsh: 'Croeso'
+
+// Possible invalid inputs include:
+// IP_ADDRESS_INVALID - not a valid ipv4 or ipv6 ip address
+// IP_ADDRESS_NOT_FOUND - ip address not in the database
+// IP_ADDRESS_REQUIRED - no ip address was supplied
+function greet(language) {
+    const greetings = new Map([
+        ['english', 'Welcome'],
+        ['czech', 'Vitejte'],
+        ['danish', 'Velkomst'],
+        ['dutch', 'Welkom'],
+        ['estonian', 'Tere tulemast'],
+        ['finnish', 'Tervetuloa'],
+        ['flemish', 'Welgekomen'],
+        ['french', 'Bienvenue'],
+        ['german', 'Willkommen'],
+        ['irish', 'Failte'],
+        ['italian', 'Benvenuto'],
+        ['latvian', 'Gaidits'],
+        ['lithuanian', 'Laukiamas'],
+        ['polish', 'Witamy'],
+        ['spanish', 'Bienvenido'],
+        ['swedish', 'Valkommen'],
+        ['welsh', 'Croeso']
+    ])
+
+    if (greetings.has(language)) {
+        return greetings.get(language)
+    }
+    return 'Welcome'
+}
+
+
+
+
+
+
+
+
+// 63
+// Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+
+// For example, if this array were passed as an argument:
+// ["Telescopes", "Glasses", "Eyes", "Monocles"]
+// Your function would return the following array:
+// ["Eyes", "Glasses", "Monocles", "Telescopes"]
+// All of the strings in the array passed to your function will be different lengths, so you will not have to decide how to order multiple strings of the same length.
+function sortByLength(array) {
+    return array.sort((a, b) => a.length - b.length)
+};
+
+
+
+
+
+
+// 64
+// Instructions
+// Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+
+// Example
+// Test.assertSimilar( capitals('CodEWaRs'), [0,3,4,6] );
+var capitals = function (word) {
+    return word.split('').map(function (l, index) {
+        if (l == l.toUpperCase()) return index
+    }).filter(e => e != undefined)
+};
+
+
+
+
+// 65
+// As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+// The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+
+// For example:
+// gimme([2, 3, 1]) => 0
+// 2 is the number that fits between 1 and 3 and the index of 2 in the input array is 0.
+// Another example (just to make sure it is clear):
+// gimme([5, 10, 14]) => 1
+// 10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
+function gimme(triplet) {
+    let copy = []
+    for (let i = 0; i < 3; i++) {
+        copy.push(triplet[i])
+    }
+    sorted = copy.sort((a, b) => a - b)
+    return triplet.indexOf(sorted[1])
+}
+
+
+
+// 66
+// Create a function with two arguments that will return an array of the first (n) multiples of (x).
+// Assume both the given number and the number of times to count will be positive numbers greater than 0.
+// Return the results as an array (or list in Python, Haskell or Elixir).
+
+// Examples:
+// countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+// countBy(2,5) === [2,4,6,8,10]
+function countBy(x, n) {
+    let z = [];
+    for (let i = 1; i <= n; i++) z.push(i * x)
+    return z;
+}
+
+
+
+
+
+// 67
+// Count the number of divisors of a positive integer n.
+// Random tests go up to n = 500000.
+
+// Examples (input --> output)
+// 4 --> 3 (1, 2, 4)
+// 5 --> 2 (1, 5)
+// 12 --> 6 (1, 2, 3, 4, 6, 12)
+// 30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30)
+function getDivisorsCnt(n) {
+    let count = 0
+    for (let i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            count++
+        }
+    }
+    return count
+}
+
+
+
+
+
+
+// 68
+// Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+// For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+// Note: The function accepts an integer and returns an integer
+function squareDigits(num) {
+    return Number(num.toString().split('').map(e => e ** 2).join(''))
+}
+
+
+
+
+
+// 69
+// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+// Return your answer as a number.
+function sumMix(x) {
+    return x.map(e => Number(e)).reduce((pre, cur) => pre + cur, 0)
+}
+
+
+
+
+// 70
+// Write a function that always returns 5
+// Sounds easy right? Just bear in mind that you can't use any of the following characters: 0123456789*+-/
+// Good luck :)
+function unusualFive() {
+    let str = "fiveC"
+    return str.length
+}
+
+
+
+
+
+// 71
+// Issue
+// Looks like some hoodlum plumber and his brother has been running around and damaging your stages again.
+// The pipes connecting your level's stages together need to be fixed before you receive any more complaints.
+// Pipes list is correct when each pipe after the first index is greater (+1) than the previous one, and that there is no duplicates.
+
+// Task
+// Given the a list of numbers, return a fixed list so that the values increment by 1 for each index from the minimum value up to the maximum value (both included).
+// Example
+// Input: 1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
+function pipeFix(numbers) {
+    let sol = []
+    for (let i = numbers[0]; i <= numbers[numbers.length - 1]; i++) {
+        sol.push(i)
+    }
+    return sol
+}
+
+
+
+// 72
+// Task
+// Please refer to two example above and write your first JS function.
+
+// mission 1:
+// use keyword function to define your function, function name should be helloWorld(don't forget the () and {})
+// mission 2:
+// use keyword var (or let or const) to define a variable str, value of str should be a string: "Hello World!"(don't forget the =).
+// mission 3:
+// type the console.log() in the next line(don't forget to put the str in the brackets).
+// When you have finished the work, click "Run Tests" to see if your code is working properly.
+// In the end, click "Submit" to submit your code pass this kata.
+function helloWorld() {
+    let str = "Hello World!"
+    console.log(str)
+}
+
 
 
 
