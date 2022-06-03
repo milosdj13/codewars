@@ -1339,6 +1339,50 @@ function helloWorld() {
 
 
 
+// 73
+// Task
+// Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates).
+
+// Notes:
+// Only positive integers will be passed to the function (> 0 ), no negatives or zeros.
+// Input >> Output Examples
+// minValue ({1, 3, 1})  ==> return (13)
+// Explanation:
+// (13) is the minimum number could be formed from {1, 3, 1} , Without duplications
+
+// minValue({5, 7, 5, 9, 7})  ==> return (579)
+// Explanation:
+// (579) is the minimum number could be formed from {5, 7, 5, 9, 7} , Without duplications
+
+// minValue({1, 9, 3, 1, 7, 4, 6, 6, 7}) return  ==> (134679)
+// Explanation:
+// (134679) is the minimum number could be formed from {1, 9, 3, 1, 7, 4, 6, 6, 7} , Without duplications
+function minValue(values) {
+    return Number(Array.from(new Set(values.sort((a, b) => a - b))).join(''))
+}
+
+
+
+
+
+// 74
+// If you can't sleep, just count sheep!!
+// Task:
+// Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+var countSheep = function (num) {
+    if (num == 0) return ""
+    let arr = []
+    for (let i = 1; i <= num; i++) {
+        arr.push(`${i} sheep...`)
+    }
+    return arr.join('')
+}
+
+
+
+
+
+
 
 
 
