@@ -1382,9 +1382,93 @@ var countSheep = function (num) {
 
 
 
+// 75
+// Write a function get_char() / getChar() which takes a number and returns the corresponding ASCII char for that value.
+
+// Example:
+// get_char(65)
+// should return:
+// 'A'
+// For ASCII table, you can refer to http://www.asciitable.com/
+function getChar(c) {
+    return String.fromCharCode(c)
+}
 
 
 
+
+
+
+
+// 76
+// Task
+// Given a string str, reverse it omitting all non-alphabetic characters.
+
+// Example
+// For str = "krishan", the output should be "nahsirk".
+// For str = "ultr53o?n", the output should be "nortlu".
+// Input/Output
+// [input] string str
+// A string consists of lowercase latin letters, digits and symbols.
+// [output] a string
+function reverseLetter(str) {
+    return str.split('').filter(el => el >= 'a' && el <= 'z').reverse().join('')
+}
+
+
+
+
+
+// 77
+// Write a function named sumDigits which takes a number as input and returns the sum of the absolute value of each of the number's decimal digits.
+
+// For example: (Input --> Output)
+// 10 --> 1
+// 99 --> 18
+// -32 --> 5
+// Let's assume that all numbers in the input will be integer values.
+function sumDigits(number) {
+    return number.toString().split('').filter(el => el > 0 && el <= 9).reduce((pre, cur) => +pre + +cur, 0)
+}
+
+
+
+
+
+
+// 78
+// In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 5! = 5 * 4 * 3 * 2 * 1 = 120. By convention the value of 0! is 1.
+// Write a function to calculate factorial for a given input. If input is below 0 or above 12 throw an exception of type ArgumentOutOfRangeException (C#) or IllegalArgumentException (Java) or RangeException (PHP) or throw a RangeError (JavaScript)
+function factorial(n) {
+    let sum = 1
+    if (n < 0 || n > 12) throw RangeError
+    if (n == 0) return sum
+    for (let i = 1; i <= n; i++) {
+        sum = sum * i
+    }
+    return sum
+}
+
+
+
+
+
+// 79
+// Fix the function
+// I created this function to add five to any number that was passed in to it and return the new value. It doesn't throw any errors but it returns the wrong number.
+// Can you help me fix the function?
+function addFive(num) {
+    var total = num + 5
+    return total
+}
+
+
+
+
+
+
+
+// 80
 
 
 
