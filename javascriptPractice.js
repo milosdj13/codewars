@@ -1514,16 +1514,44 @@ function powersOfTwo(n) {
 // Examples (input -> output:
 // * 'R', [3, 2, 1, 2]      ->  [1, 2, 2, 3]
 // * 'L', [1, 4, 5, 3, 5 ]  ->  [5, 5, 4, 3, 1]
-const flip=(d, a)=>{
+const flip = (d, a) => {
 
-    if(d == "R"){
-      return a.sort( (a, b) => a-b)
+    if (d == "R") {
+        return a.sort((a, b) => a - b)
     }
-    return a.sort( (a, b) => b-a)
-  }
+    return a.sort((a, b) => b - a)
+}
 
 
 
+
+
+// 83
+// Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.
+
+// For example:
+// solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
+// solution(null); // should return []
+function solution(nums) {
+    if (nums === null) return []
+    return nums.sort((a, b) => a - b)
+}
+
+
+
+
+
+// 84
+// Return the number (count) of vowels in the given string.
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// The input string will only consist of lower case letters and/or spaces.
+function getCount(str) {
+    let count = 0
+    for (let i of str) {
+        if (i === "a" || i === "e" || i === "i" || i === "o" || i === "u") count++
+    }
+    return count
+}
 
 
 
