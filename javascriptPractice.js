@@ -1555,4 +1555,65 @@ function getCount(str) {
 
 
 
+// 85
+// Your task is to write function findSum.
+// Upto and including n, this function will return the sum of all multiples of 3 and 5.
+
+// For example:
+// findSum(5) should return 8 (3 + 5)
+// findSum(10) should return 33 (3 + 5 + 6 + 9 + 10)
+function findSum(n) {
+    let sum = 0
+    for (let i = 0; i <= n; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+            sum += i
+        }
+    }
+    return sum
+}
+
+
+
+
+// 86
+// Task:
+// Given a list of integers, determine whether the sum of its elements is odd or even.
+// Give your answer as a string matching "odd" or "even".
+// If the input array is empty consider it as: [0] (array with a zero).
+
+// Examples:
+// Input: [0]
+// Output: "even"
+// Input: [0, 1, 4]
+// Output: "odd"
+// Input: [0, -1, -5]
+// Output: "even"
+// Have fun!
+function oddOrEven(array) {
+    array = array.reduce((pre, cur) => pre + cur, 0)
+    return array % 2 === 0 ? "even" : "odd"
+}
+
+
+
+
+
+
+// 87
+// Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+// Write a function which takes a list of strings and returns each line prepended by the correct number.
+// The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+
+// Examples:
+// number([]) // => []
+// number(["a", "b", "c"]) // => ["1: a", "2: b", "3: c"]
+var number = function (array) {
+    return array.map((el, index) => `${index + 1}: ${el}`)
+}
+
+
+
+
+
+
 
