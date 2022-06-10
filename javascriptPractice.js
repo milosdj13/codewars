@@ -1614,6 +1614,83 @@ var number = function (array) {
 
 
 
+// 88
+// Some numbers have funny properties. For example:
+// 89 --> 8¹ + 9² = 89 * 1
+// 695 --> 6² + 9³ + 5⁴= 1390 = 695 * 2
+// 46288 --> 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
+
+// Given a positive integer n written as abcd... (a, b, c, d... being digits) and a positive integer p
+// we want to find a positive integer k, if it exists, such that the sum of the digits of n taken to the successive powers of p is equal to k * n.
+// In other words:
+// Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k
+// If it is the case we will return k, if not return -1.
+
+// Note: n and p will always be given as strictly positive integers.
+// digPow(89, 1) should return 1 since 8¹ + 9² = 89 = 89 * 1
+// digPow(92, 1) should return -1 since there is no k such as 9¹ + 2² equals 92 * k
+// digPow(695, 2) should return 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
+// digPow(46288, 3) should return 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
+function digPow(n, p) {
+    let sum = 0
+    let arr = n.toString().split('')
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i] ** p
+        p++
+    }
+    if (sum % n === 0) {
+        return sum / n
+    } else {
+        return -1
+    }
+}
+
+
+
+
+
+// 89
+// This is the first step to understanding FizzBuzz.
+// Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value.
+// Your expected output is an array of positive integers from 1 to n (inclusive).
+// Your job is to write an algorithm that gets you from the input to the output.
+function preFizz(n) {
+    let arr = []
+    for (let i = 1; i <= n; i++) {
+        arr.push(i)
+    }
+    return arr
+}
+
+
+
+
+// 90
+// This Kata is intended as a small challenge for my students
+// All Star Code Challenge #18
+// Create a function that accepts 2 string arguments and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+// If no occurrences can be found, a count of 0 should be returned.
+
+// ("Hello", "o")  ==>  1
+// ("Hello", "l")  ==>  2
+// ("", "z")       ==>  0
+// Notes:
+// The first argument can be an empty string
+// The second string argument will always be of length 1
+function strCount(str, letter) {
+    let count = 0
+    for (let i of str) {
+        if (i === letter) {
+            count++
+        }
+    }
+    return count
+}
+
+
+
+
+
 
 
 
