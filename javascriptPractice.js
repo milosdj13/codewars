@@ -1739,5 +1739,46 @@ var number = function (busStops) {
 
 
 
+// 94
+// Write a function that returns a string in which firstname is swapped with last name.
+
+// Example(Input --> Output)
+// "john McClane" --> "McClane john"
+function nameShuffler(str) {
+    return str.split(" ").reverse().join(' ')
+}
+
+
+
+
+// 95
+// You have an award-winning garden and every day the plants need exactly 40mm of water. You created a great piece of JavaScript to calculate the amount of water your plants will need when you have taken into consideration the amount of rain water that is forecast for the day. Your jealous neighbour hacked your computer and filled your code with bugs.
+// Your task is to debug the code before your plants die!
+function rainAmount(mm) {
+    let num = 40 - mm
+    if (mm < 40) {
+        return "You need to give your plant " + num + "mm of water"
+    } else {
+        return "Your plant has had more than enough water for today!"
+    };
+}
+
+
+
+
+
+// 96
+// The wide-mouth frog is particularly interested in the eating habits of other creatures.
+// He just can't stop asking the creatures he encounters what they like to eat. But, then he meets the alligator who just LOVES to eat wide-mouthed frogs!
+// When he meets the alligator, it then makes a tiny mouth.
+// Your goal in this kata is to create complete the mouth_size method this method takes one argument animal which corresponds to the animal encountered by the frog. If this one is an alligator (case-insensitive) return small otherwise return wide
+function mouthSize(animal) {
+    return animal.toLowerCase() === "alligator" ? "small" : "wide"
+}
+
+
+
+
+
 
 
