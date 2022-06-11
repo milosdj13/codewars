@@ -1691,6 +1691,53 @@ function strCount(str, letter) {
 
 
 
+// 91
+// Story
+// Your online store likes to give out coupons for special occasions. Some customers try to cheat the system by entering invalid codes or using expired coupons.
+// Task
+// Your mission:
+// Write a function called checkCoupon which verifies that a coupon code is valid and not expired.
+// A coupon is no more valid on the day AFTER the expiration date. All dates will be passed as strings in this format: "MONTH DATE, YEAR".
+
+// Examples:
+// checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")  ===  true
+// checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")  ===  false
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+    return enteredCode === correctCode && new Date(currentDate) <= new Date(expirationDate)
+}
+
+
+
+
+
+
+
+// 92
+// In this kata you will create a function that takes in a list and returns a list with the reverse order.
+
+// Examples (Input -> Output)
+// * [1, 2, 3, 4]  -> [4, 3, 2, 1]
+// * [9, 2, 0, 7]  -> [7, 0, 2, 9]
+function reverseList(list) {
+    return list.reverse()
+}
+
+
+
+
+
+// 93
+// There is a bus moving in the city, and it takes and drop some people in each bus stop.
+// You are provided with a list (or array) of integer pairs. Elements of each pair represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
+// Your task is to return number of people who are still in the bus after the last bus station (after the last array). Even though it is the last bus stop, the bus is not empty and some people are still in the bus, and they are probably sleeping there :D
+// Take a look on the test cases.
+// Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
+// The second value in the first integer array is 0, since the bus is empty in the first bus stop.
+var number = function (busStops) {
+    return busStops.reduce((pre, cur) => pre + cur[0] - cur[1], 0)
+}
+
+
 
 
 
