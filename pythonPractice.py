@@ -752,4 +752,41 @@ def number_to_string(num):
 
 
 
+# 43
+# Write a function that given a floor in the american system returns the floor in the european system.
+# With the 1st floor being replaced by the ground floor and the 13th floor being removed, the numbers move down to take their place. In case of above 13, they move down by two because there are two omitted numbers below them.
+# Basements (negatives) stay the same as the universal level.
+# More information here
+
+# Examples
+# 1  =>  0 
+# 0  =>  0
+# 5  =>  4
+# 15  =>  13
+# -3  =>  -3
+def get_real_floor(n):
+    if n == 1 or n == 0 : return 0
+    if n < 0 : return n
+    if n < 13 : return n-1
+    return n-2
+
+
+
+
+
+# 44
+# Define a method hello that returns "Hello, Name!" to a given name, or says Hello, World! if name is not given (or passed as an empty String).
+# Assuming that name is a String and it checks for user typos to return a name with a first capital letter (Xxxx).
+
+# Examples:
+# * With `name` = "john"  => return "Hello, John!"
+# * With `name` = "aliCE" => return "Hello, Alice!"
+# * With `name` not given 
+#   or `name` = ""        => return "Hello, World!"
+def hello(name=''):
+    print(name)
+    if name == "" or None : return "Hello, World!"
+    return f"Hello, {name.capitalize()}!"
+
+
 
