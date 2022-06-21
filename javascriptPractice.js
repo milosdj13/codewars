@@ -1874,84 +1874,6 @@ function getSize(width, height, depth) {
 
 
 
-// 101
-// Inspired by the development team at Vooza, write the function that
-// accepts the name of a programmer, and
-// returns the number of lightsabers owned by that person.
-// The only person who owns lightsabers is Zach, by the way. He owns 18, which is an awesome number of lightsabers. Anyone else owns 0.
-// Note: your function should have a default parameter.
-
-// For example(Input --> Output):
-// "anyone else" --> 0
-// "Zach" --> 18
-function howManyLightsabersDoYouOwn(name) {
-    return name === "Zach" ? 18 : 0
-}
-
-
-
-
-
-
-// 102
-// Exclusive "or" (xor) Logical Operator
-// Overview
-// In some scripting languages like PHP, there exists a logical operator (e.g. &&, ||, and, or, etc.) called the "Exclusive Or" (hence the name of this Kata). The exclusive or evaluates two booleans. It then returns true if exactly one of the two expressions are true, false otherwise. For example:
-// false xor false == false // since both are false
-// true xor false == true // exactly one of the two expressions are true
-// false xor true == true // exactly one of the two expressions are true
-// true xor true == false // Both are true.  "xor" only returns true if EXACTLY one of the two expressions evaluate to true.
-// Task
-// Since we cannot define keywords in Javascript (well, at least I don't know how to do it), your task is to define a function xor(a, b) where a and b are the two expressions to be evaluated. Your xor function should have the behaviour described above, returning true if exactly one of the two expressions evaluate to true, false otherwise.
-function xor(a, b) {
-    if (a && b) return false
-    return a || b
-}
-
-
-
-
-// 103
-// Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
-// Some cases:
-// [22, -6, 32, 82, 9, 25] =>  [-6, 32, 25]
-// [68, -1, 1, -7, 10, 10] => [-1, 10]
-// [-56,-85,72,-26,-14,76,-27,72,35,-21,-67,87,0,21,59,27,-92,68] => [-85, 72, 0, 68]
-function multipleOfIndex(array) {
-    return array.filter((el, index) => el % index === 0)
-}
-
-
-
-
-
-
-
-// 104
-// You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
-
-// #Examples:
-// Kata.getMiddle("test") should return "es"
-// Kata.getMiddle("testing") should return "t"
-// Kata.getMiddle("middle") should return "dd"
-// Kata.getMiddle("A") should return "A"
-// #Input
-// A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
-// #Output
-// The middle character(s) of the word represented as a string.
-function getMiddle(s) {
-    s = s.split('')
-
-    let l = 0
-    let r = s.length - 1
-    while (l + 1 < r) {
-        s.shift()
-        s.pop()
-        l++
-        r--
-    }
-    return s.join('')
-}
 
 
 
@@ -1960,44 +1882,17 @@ function getMiddle(s) {
 
 
 
-// 105
-// You are given an array(list) strarr of strings and an integer k. Your task is to return the first longest string consisting of k consecutive strings taken in the array.
 
-// Examples:
-// strarr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], k = 2
-// Concatenate the consecutive strings of strarr by 2, we get:
-// treefoling   (length 10)  concatenation of strarr[0] and strarr[1]
-// folingtrashy ("      12)  concatenation of strarr[1] and strarr[2]
-// trashyblue   ("      10)  concatenation of strarr[2] and strarr[3]
-// blueabcdef   ("      10)  concatenation of strarr[3] and strarr[4]
-// abcdefuvwxyz ("      12)  concatenation of strarr[4] and strarr[5]
 
-// Two strings are the longest: "folingtrashy" and "abcdefuvwxyz".
-// The first that came is "folingtrashy" so 
-// longest_consec(strarr, 2) should return "folingtrashy".
-// In the same way:
-// longest_consec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"], 2) --> "abigailtheta"
-// n being the length of the string array, if n = 0 or k > n or k <= 0 return "" (return Nothing in Elm).
-// Note
-// consecutive strings : follow one after another without an interruption
-function longestConsec(strarr, k) {
-    let max = ""
-    let i = 0
-    while (i + k <= strarr.length) {
-        let curr = ""
 
-        for (let j = 0; j < k; j++) {
-            curr += strarr[i + j]
-        }
 
-        if (curr.length > max.length) {
-            max = curr
-        }
-        i++
-    }
-    return max
 
-}
+
+
+
+
+
+
 
 
 
