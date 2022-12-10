@@ -12,7 +12,6 @@
 // N.B. If your solution passes all fixed tests but fails at the random tests, make sure you aren't mutating the input array.
 
 function inAscOrder(arr) {
-	if (arr.length < 2) return true;
 	for (let i = 1; i < arr.length; i++) {
 		if (arr[i] <= arr[i - 1]) return false;
 	}
