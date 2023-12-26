@@ -11,10 +11,10 @@
 // input;           // == [4, 3, 2, 1]  // items reordered in the original array
 
 Array.prototype.reverse = function () {
-	for (let i = 0; i < this.length / 2; i++) {
-		const temp = this[i];
-		this[i] = this[this.length - 1 - i];
-		this[this.length - 1 - i] = temp;
-	}
-	return this;
+  for (let i = 0; i < this.length / 2; i++) {
+    const temp = this[i];
+    this[i] = this[this.length - 1 - i];
+    this[this.length - 1 - i] = temp;
+  }
+  return this;
 };
